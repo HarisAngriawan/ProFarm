@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PRO-FARM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/jquery.easydropdown.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (!$clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+    </script>
+    <!-- start menu -->
+    <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/megamenu.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".megamenu").megamenu();
+        });
+    </script>
+    <!-- end menu -->
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" id="sourcecode">
+        $(function() {
+            $('.scroll-pane').jScrollPane();
+        });
+    </script>
+    <!-- top scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1200);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header-top">
+        <div class="wrap">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.jpg" alt="" /></a>
+            </div>
+            <div class="cssmenu">
+                <ul>
+                    <li class="active"><a href="index.html">Beranda</a></li>
+                    <li><a href="register.html">Daftar</a></li>
+                    <li><a href="login.html">Masuk</a></li>
+                    <li><a href="shop.html">Produk</a></li>
+                    <li><a href="kontak_kami.html">Kontak Kami</a></li>
+                    <li><a href="checkout.html">CheckOut</a></li>
+                </ul>
+            </div>
+            <ul class="icon2 sub-icon2 profile_img">
+                <li>
+                    <a class="active-icon c2" href="#"> </a>
+                    <ul class="sub-icon2 list">
+                        <li>
+                            <h3>Keranjang</h3>
+                            <a href=""></a>
+                        </li>
+                        <li>
+                            <p>Belum ada Yang di belanjakan <a href="">Klik di sini untuk berbelanja</a></p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row col-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11180.093981170032!2d110.31868183648756!3d-7.81519599528915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af80ddb80ffb9%3A0xf7ff4e60e2c80adc!2sJl.%20Abimanyu%2C%20Tamantirto%2C%20Kec.%20Kasihan%2C%20Bantul%2C%20Daerah%20Istimewa%20Yogyakarta%2055184!5e0!3m2!1sen!2sid!4v1567945164716!5m2!1sen!2sid"
+                width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <h4 class="mt-3">Tanya Kami ?</h4>
+            <p>Adakah hal-hal yang ingin Anda tanyakan perihal layanan dan pengirimanan barang? Atau barangkali topik seputar bagaimana cara mengkonfirmasi pesanan, cara pembayaran dan hal lainnya?</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 mb-4">
+                <div class="card" style="background-color: rgba(0,0,0,.03);">
+                    <div class="card-body">
+                        <h4>Sampaikan Pesan Anda</h4>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nama</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Topik yang ditanyakan</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan topik ditanyakan">
+                            <small id="emailHelp" class="form-text text-muted">Bagaimana cara membayar ?</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Ceritakan Masalah anda</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder=""></textarea>
+                        </div>
+                        <button type="button" class="btn btn-dark">KIRIM</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="background-color: rgba(0,0,0,.03);">
+                    <div class="card-body">
+                        <h4>Kontak</h4>
+                        <button type="button" class="btn btn-dark mb-3">Call/SMS - 081336884424</button>
+                        <button type="button" class="btn btn-success mb-3">WhatsApp - 081336884424</button>
+                        <h5>Layanan Efektif Jam :</h5>
+                        <p>Jam 08:00 - 22:00</p>
+                        <h5>Kantor</h5>
+                        <p>Jl. Abimanyu Tamantirto, Kasihan, Bantul, Yogyakarta. Kode pos 55183</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <hr>
+        <hr>
+
+        <div class="footer-bottom">
+            <div class="wrap">
+                <div class="section group">
+                    <div class="col_1_of_5 span_1_of_5">
+                        <h3 class="m_9">Kantor Pusat</h3>
+                        <div class="img-kantor">
+                            <img src="images/kantor.jpg" alt="" style="height: 180px; width: 90%;">
+                        </div>
+                        <ul class="list1">
+                            <li><a href="">Jl. Abimanyu Tamantirto, Kasihan, Bantul, Yogyakarta. Kode pos 55183</a></li>
+                        </ul>
+                    </div>
+                    <div class="col_1_of_5 span_1_of_5">
+                        <h3 class="m_9">Pusat Bantuan</h3>
+                        <ul class="list1">
+                            <li><a href="">Cara Pemesanan</a></li>
+                            <li><a href="">Cara Pembayaran</a></li>
+                            <li><a href="">Cara Pengembalian</a></li>
+                            <li><a href="">Konfirmasi Pemesanan</a></li>
+                        </ul>
+                    </div>
+                    <div class="col_1_of_5 span_1_of_5">
+                        <h3 class="m_9">Lihat Kami</h3>
+                        <ul class="sub_list">
+                            <h4 class="m_10"></h4>
+                            <li><a href="index.html">Halaman Belanja</a></li>
+                            <li><a href="tentang_kami.html">Tentang Kami</a></li>
+                            <li><a href="kontak_kami.html">Kontak Kami</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="copy">
+        <div class="wrap">
+            <p style="margin: 0">© All rights reserved 2019</a>
+            </p>
+        </div>
+    </div>
+
+    <script async type="text/javascript" src="//userlike-cdn-widgets.s3-eu-west-1.amazonaws.com/76f84fd7e778fcc4354d84ea63c32c615de3e63c7b47881c2ba36adca3bb1e86.js"></script>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PRO-FARM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/jquery.easydropdown.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (!$clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+    </script>
+    <!-- start menu -->
+    <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/megamenu.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".megamenu").megamenu();
+        });
+    </script>
+    <!-- end menu -->
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" id="sourcecode">
+        $(function() {
+            $('.scroll-pane').jScrollPane();
+        });
+    </script>
+    <!-- top scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1200);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header-top">
+        <div class="wrap">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.jpg" alt="" /></a>
+            </div>
+            <div class="cssmenu">
+                <ul>
+                    <li class="active"><a href="index.html">Beranda</a></li>
+                    <li><a href="register.html">Daftar</a></li>
+                    <li><a href="login.html">Masuk</a></li>
+                    <li><a href="shop.html">Produk</a></li>
+                    <li><a href="kontak_kami.html">Kontak Kami</a></li>
+                    <li><a href="checkout.html">CheckOut</a></li>
+                </ul>
+            </div>
+            <ul class="icon2 sub-icon2 profile_img">
+                <li>
+                    <a class="active-icon c2" href="#"> </a>
+                    <ul class="sub-icon2 list">
+                        <li>
+                            <h3>Keranjang</h3>
+                            <a href=""></a>
+                        </li>
+                        <li>
+                            <p>Belum ada Yang di belanjakan <a href="">Klik di sini untuk berbelanja</a></p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="image-kontak">
+        <img src="images/petani.jpg" alt="" style="width:80%; height: auto;">
+    </div>
+    <div class="container">
+        <div class="row content-row">
+            <div class="col-6 content-kontak">
+                <img src="images/petani2.jpg " alt=" " style="width: 100%;">
+            </div>
+            <div class="col-6 content-kontak">
+                <div class="content-text" style="">
+                    <h5 class="text-center">PRO-FARM</h5>
+                    <p class="text-justify">Pro-Farm adalah website yang dikelola oleh BUMDEs dimana menurut Undang-undang Nomor 6 Tahun 2014 sebagai badan usaha yang seluruh atau sebagian besar modalnya dimiliki oleh desa melalui penyertaan secara langsung yang berasal dari
+                        kekayaan desa yang dipisahkan guna mengelola aset, jasa pelayanan dan usaha lain yang secara luas untuk kepentingan kesejahteraan masyarakat desa. Website ini berfokus kepada penjualan produk-produk pertanian dimana tujuan kami
+                        dari adannya website ini adalah untuk memajukan perekonomian desa khususnya di sektor pertanian dengan memberikan kemudahan bagi petani untuk mengelola lahan pertanian serta mempermudah penjualan produk pertanian. Dukung kami dalam
+                        mewujudkan tujuan kami melalui kontribusi dalam pembelian produk-produk pertaian dlam negeri.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row content-row">
+            <div class="col-4 content-kontak kotak-images">
+                <img src="images/barang.jpg" alt="">
+                <h4>Pelayanan</h4>
+                <p>Jadwal pengiriman Untuk pemesanan produk dari pukul 08.00-14.00 WIB kami akan mengirim produk pada hari itu juga, sedangkan untuk pemesanan diatas pukul 14.00 WIB produk akk kami kirim pada hari berikutnya. </p>
+            </div>
+            <div class="col-4 content-kontak kotak-images">
+                <img src="images/barang 2.jpg" alt="">
+                <h4>Konsultasi Produk Belanjaan</h4>
+                <p>Anda dapat mengonsultasikan produk belanjaan anda kepada kami apabila anda membutuhkan bantuan. Dengan menghubungi kami melalui kontak kami, maka kami akan berusaha sebaik mungkin membantu anda dalam menyelesaikan masalah produk anda.
+                </p>
+            </div>
+            <div class="col-4 content-kontak kotak-images">
+                <img src="images/cs.jpg" alt="">
+                <h4>Kritik Dan Saran</h4>
+                <p>Kami sangat berharap konsumen dapat merasa puas dengan pelayanan yang kami berikan. Sehingga Kritik dan saran yang membangun dari konsumen sangat kami butuhkan demi peningkatan kualitas kami.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+            <div class="wrap">
+                <div class="col_1_of_footer-top span_1_of_footer-top">
+                    <ul class="f_list">
+                        <li><img src="images/f_icon.png" alt="" /><span class="delivery">Gratis Ongkir Untuk Belanja di atas Rp. 500.000*</span></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_footer-top span_1_of_footer-top">
+                    <ul class="f_list">
+                        <li><img src="images/f_icon1.png" alt="" /><span class="delivery">Customer Service :<span class="orange"> 081336884424</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col_1_of_footer-top span_1_of_footer-top">
+                    <ul class="f_list">
+                        <li><img src="images/f_icon2.png" alt="" /><span class="delivery">Pengiriman Cepat & Gratis Pengembalian</span></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="wrap">
+                <div class="section group">
+                    <div class="col_1_of_5 span_1_of_5">
+                        <h3 class="m_9">Kantor Pusat</h3>
+                        <div class="img-kantor">
+                            <img src="images/kantor.jpg" alt="" style="height: 180px; width: 90%;">
+                        </div>
+                        <ul class="list1">
+                            <li><a href="">Jl. Abimanyu Tamantirto, Kasihan, Bantul, Yogyakarta. Kode pos 55183</a></li>
+                        </ul>
+                    </div>
+                    <div class="col_1_of_5 span_1_of_5">
+                        <h3 class="m_9">Pusat Bantuan</h3>
+                        <ul class="list1">
+                            <li><a href="">Cara Pemesanan</a></li>
+                            <li><a href="">Cara Pembayaran</a></li>
+                            <li><a href="">Cara Pengembalian</a></li>
+                            <li><a href="">Konfirmasi Pemesanan</a></li>
+                        </ul>
+                    </div>
+                    <div class="col_1_of_5 span_1_of_5">
+                        <h3 class="m_9">Lihat Kami</h3>
+                        <ul class="sub_list">
+                            <h4 class="m_10"></h4>
+                            <li><a href="index.html">Halaman Belanja</a></li>
+                            <li><a href="tentang_kami.html">Tentang Kami</a></li>
+                            <li><a href="kontak_kami.html">Kontak Kami</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="copy">
+        <div class="wrap">
+            <p style="margin: 0">© All rights reserved 2019
+            </p>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+
+</html>
